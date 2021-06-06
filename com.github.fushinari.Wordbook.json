@@ -92,8 +92,8 @@
         {
           "type": "git",
           "url": "https://github.com/fushinari/Wordbook.git",
-          "tag": "0.3.0",
-          "commit": "f9b045b759af6c41f707dff6a916395c7375f3c2"
+          "tag": "0.3.1",
+          "commit": "65fb682cf6559f947641c0b058e2bf9237dbe2ba"
         }
       ]
     }
