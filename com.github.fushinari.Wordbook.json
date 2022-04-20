@@ -1,7 +1,7 @@
 {
   "app-id": "com.github.fushinari.Wordbook",
   "runtime": "org.gnome.Platform",
-  "runtime-version": "40",
+  "runtime-version": "42",
   "sdk": "org.gnome.Sdk",
   "command": "wordbook",
   "finish-args": [
@@ -17,26 +17,24 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/espeak-ng/pcaudiolib/archive/1.1.tar.gz",
-          "sha256": "699a5a347b1e12dc5b122e192e19f4db01621826bf41b9ebefb1cbc63ae2180b"
+          "url": "https://github.com/espeak-ng/pcaudiolib/archive/1.2.tar.gz",
+          "sha256": "44b9d509b9eac40a0c61585f756d76a7b555f732e8b8ae4a501c8819c59c6619"
         }
       ]
     },
     {
       "name": "espeak-ng",
-      "buildsystem": "simple",
-      "build-commands": [
-        "./autogen.sh",
-        "CC=clang CFLAGS=-Wextra ./configure --prefix=${FLATPAK_DEST}",
-        "make",
-        "make install"
-      ],
+      "cleanup": [ "*.la" ],
+      "no-parallel-make": true,
+      "build-options": {
+        "ldflags": "-Wl,--allow-multiple-definition"
+      },
       "sources": [
         {
           "type": "git",
           "url": "https://github.com/espeak-ng/espeak-ng.git",
-          "tag": "1.50",
-          "commit": "b702b03996de94035fadae0eb5ad9506c5a09f35"
+          "tag": "1.51",
+          "commit": "2e9a5fccbb0095e87b2769e9249ea1f821918ecd"
         }
       ]
     },
